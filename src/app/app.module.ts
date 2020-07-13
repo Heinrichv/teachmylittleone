@@ -37,6 +37,8 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
+import { AdminAccountComponent } from './views/account/admin-account/admin-account.component';
+import { StudentAccountComponent } from './views/account/student-account/student-account.component';
 
 @NgModule({
   imports: [
@@ -57,7 +59,9 @@ import { ChartsModule } from 'ng2-charts';
     AppComponent,
     ...APP_CONTAINERS,
     P404Component,
-    P500Component
+    P500Component,
+    AdminAccountComponent,
+    StudentAccountComponent
   ],
   providers: [{
     provide: LocationStrategy,

@@ -7,6 +7,8 @@ import { DefaultLayoutComponent } from './containers';
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { AuthGuard } from './services/auth.guard';
+import { AdminAccountComponent } from './views/account/admin-account/admin-account.component';
+import { StudentAccountComponent } from './views/account/student-account/student-account.component';
 
 export const routes: Routes = [
   {
@@ -36,14 +38,24 @@ export const routes: Routes = [
     component: DefaultLayoutComponent,
     canActivate: [AuthGuard],
     data: {
-      title: 'Home'
+      title: 'My Classroom'
     },
     children: [
       {
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule),
         canActivate: [AuthGuard]
-      }
+      },
+      {
+        path: 'account-admin',
+        component: AdminAccountComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'account-student',
+        component: StudentAccountComponent,
+        canActivate: [AuthGuard]
+      },
     ]
   },
   {

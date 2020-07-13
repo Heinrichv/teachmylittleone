@@ -1,0 +1,42 @@
+<ng-container *ngIf="user">
+    <div class="row">
+        <div class="col">
+            <button routerLink="/dashboard" type="button" class="btn btn-pill btn-secondary">Go Back</button>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col">
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Email Address: {{user.email}}
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Verified: {{user.email_verified ? '✅' : 'Pending Verification'}}
+                </li>
+                <a href="#" class="list-group-item list-group-item-action">
+                    Subscription: Premium
+                    <span class="pull-right">Change Subscription</span>
+                </a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col">
+
+            <span>Active Classes:</span>
+
+            <ul class="list-group mt-2">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Classroom 1
+                    <span class="badge badge-primary badge-pill">5 Students</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Classroom 2
+                    <span class="badge badge-primary badge-pill">4 Students</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</ng-container>
